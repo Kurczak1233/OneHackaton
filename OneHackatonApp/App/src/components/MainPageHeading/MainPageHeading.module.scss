@@ -16,6 +16,9 @@
   .sectionHeading {
     @include commonHeading;
   }
+  .link {
+    text-decoration: none;
+  }
   .colorBar {
     width: 135px;
     height: 4px;
@@ -35,10 +38,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid transparent;
+    border: 3px solid transparent;
     cursor: pointer;
   }
   .addButton:hover {
-    border: 1px solid #00ffc2;
+    border: 3px solid #00ffc2;
   }
 }

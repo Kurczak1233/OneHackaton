@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./MainPageHeading.module.scss";
 
 interface IMainPageHeading {
@@ -12,9 +13,11 @@ const MainPageHeading = ({ name, color }: IMainPageHeading) => {
         {name}
       </div>
       <div className={styles.colorBar} style={{ backgroundColor: color }} />
-      <div className={styles.addButton} style={{ backgroundColor: color }}>
-        Create new note
-      </div>
+      <Link className={styles.link} to={"/developers-note/new"}>
+        <div className={styles.addButton} style={{ backgroundColor: color }}>
+          Create new note
+        </div>
+      </Link>
     </div>
   );
 };
