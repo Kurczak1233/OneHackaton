@@ -1,7 +1,6 @@
 ﻿using System.Security.Claims;
 using OneHackaton.Domain.UserMetadata;
 using OneHackaton.Domain.UsersAggregate;
-using OneHackaton.Infrastructure.Commands;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Caching.Memory;

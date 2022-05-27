@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using OneHackaton.Domain.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +10,13 @@ namespace OneHackaton.Infrastructure.Middlewares.Commands
 {
     public class CreateNewUserCommandHandler : IRequestHandler<CreateNewUserCommand>
     {
-        public CreateNewUserCommandHandler()
-        {
+        private readonly ISqlConnectionService _sqlConnectionService;
 
+        public CreateNewUserCommandHandler(ISqlConnectionService sqlConnectionService)
+        {
+            _sqlConnectionService = sqlConnectionService;
         }
-        public Task<Unit> Handle(CreateNewUserCommand request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(CreateNewUserCommand request, CancellationToken cancellationToken)
         {
             throw new NotImplementedException();
         }
