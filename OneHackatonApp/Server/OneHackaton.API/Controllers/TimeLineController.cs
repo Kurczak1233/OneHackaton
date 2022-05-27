@@ -8,8 +8,8 @@ namespace OneHackaton.API.Controllers
     [Route("[controller]")]
     public class TimeLineController : Controller
     {
-        [HttpGet(Name = "GetTestItem")]
-        public IEnumerable<ReadTimelineVM> Get()
+        [HttpGet("GetTestItem")]
+        public IEnumerable<ReadTimelineVM> GetTestItem()
         {
             return new List<ReadTimelineVM>() { new ReadTimelineVM()
             {
