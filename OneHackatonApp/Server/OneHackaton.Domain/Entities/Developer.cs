@@ -1,4 +1,4 @@
-﻿namespace OneHackaton.Domain
+﻿namespace OneHackaton.Domain.Entities
 {
     public class Developer : User
     {
