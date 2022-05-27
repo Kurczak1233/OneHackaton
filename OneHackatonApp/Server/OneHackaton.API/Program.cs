@@ -72,7 +72,7 @@ app.UseCors();
 
 app.UseHttpsRedirection();
 
-app.UseMiddleware<GetUserContextMiddleware>(connectionString);
+//app.UseMiddleware<GetUserContextMiddleware>(connectionString);
 
 app.UseAuthorization();
 
