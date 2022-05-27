@@ -1,11 +1,11 @@
 ﻿using System.Security.Claims;
 using OneHackaton.Domain.UserMetadata;
-using OneHackaton.Domain.UsersAggregate;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.DependencyInjection;
 using OneHackaton.Infrastructure.Middlewares.Commands;
+using OneHackaton.Domain.UsersAggregate;
 
 namespace OneHackaton.Infrastructure.Middlewares;
 

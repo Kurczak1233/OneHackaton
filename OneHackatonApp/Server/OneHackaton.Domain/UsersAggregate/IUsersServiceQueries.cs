@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OneHackaton.Domain.UsersAggregate
 {
-    public interface IUserServiceQueries
+    public interface IUsersServiceQueries
     {
         Task<ApplicationUser> GetApplicationUserByEmail(string userEmail);
     }
