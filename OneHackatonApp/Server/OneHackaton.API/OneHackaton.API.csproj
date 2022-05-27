@@ -13,7 +13,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\OneHackaton.Application\OneHackaton.Application.csproj" />
-    <ProjectReference Include="..\OneHackaton.Infrastructure\OneHackaton.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
