@@ -9,6 +9,7 @@
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="11.0.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="Dapper" Version="2.0.123" />
     <PackageReference Include="MediatR" Version="10.0.1" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.5" />
@@ -20,10 +21,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\OneHackaton.Domain\OneHackaton.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Middlewares\Queries\" />
   </ItemGroup>
 
 </Project>

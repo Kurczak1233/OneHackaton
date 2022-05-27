@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OneHackaton.Domain.DTOs
 {
-    public class DeveloperItemDto
+    public record DeveloperItemDto
     {
         public string Name { get; set; }
     }

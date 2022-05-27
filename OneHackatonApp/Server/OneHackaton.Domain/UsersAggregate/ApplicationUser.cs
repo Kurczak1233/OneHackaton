@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OneHackaton.Domain.UsersAggregate
 {
-    public class ApplicationUser
+    public record ApplicationUser
     {
         public int Id { get; set; }
         public string Email { get; set; }
