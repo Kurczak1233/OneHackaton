@@ -2,7 +2,7 @@
     "domain": "dev-cxcbcq2e.us.auth0.com",
     "clientID": "erEcqZ5xWb3Luo3hFxoKjr5AZh5QO29E",
     "responseType": "token id_token",
-    "audience": "https://i-big-data-auth-api.com/",
+    "audience": "https://OneHackaton.com",
     "scope": "openid email profile email_verified",
-    "baseUrl": "http://localhost:5239"
+    "baseUrl": "http://localhost:7057"
   }
