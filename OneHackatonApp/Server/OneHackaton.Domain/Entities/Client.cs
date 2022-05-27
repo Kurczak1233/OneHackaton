@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OneHackaton.Domain.Entities
 {
-    internal class Client : User
+    public class Client : User
     {
     }
 }
