@@ -13,8 +13,8 @@ namespace OneHackaton.API.Controllers
             return new List<TimelineVM>() { new TimelineVM()
             {
                 Date=DateTime.Today,
-                DeveloperItems=new List<DeveloperItemDTO>() {
-                    new DeveloperItemDTO(){Name="bug request" }
+                DeveloperItems=new List<DeveloperItemDto>() {
+                    new DeveloperItemDto(){Name="bug request" }
                 },
                 UserItems = new List<UserItemDTO>() {
                     new UserItemDTO(){Name="bug request" }

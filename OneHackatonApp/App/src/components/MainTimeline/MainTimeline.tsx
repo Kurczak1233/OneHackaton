@@ -21,7 +21,7 @@ const MainTimeline = () => {
         {mockedData.map((item) => {
           return (
             <div className={styles.itemWrapper} key={item.date.toString()}>
-              <ClientItems usersItems={item.usersItems} />
+              <DevelopersItems developersItems={item.developersItems} />
               <div
                 style={{
                   height:
@@ -29,7 +29,7 @@ const MainTimeline = () => {
                 }}
                 className={styles.middleDayBar}
               />
-              <DevelopersItems developersItems={item.developersItems} />
+              <ClientItems usersItems={item.usersItems} />
             </div>
           );
         })}
