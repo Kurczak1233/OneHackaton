@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OneHackaton.Domain
+namespace OneHackaton.Domain.Entities
 {
-    internal class Client
+    internal class Client : User
     {
     }
 }

@@ -4,13 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OneHackaton.Domain
+namespace OneHackaton.Domain.Entities
 {
-    public class Team
+    public class Project
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public virtual ICollection<Project> Projects { get; set; }
-        public virtual ICollection<Developer> Developers { get; set; }
+        public virtual Team Team { get; set; }
     }
 }
