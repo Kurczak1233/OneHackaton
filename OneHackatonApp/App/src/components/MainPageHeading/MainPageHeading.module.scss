@@ -1,0 +1,40 @@
+@mixin commonHeading {
+  display: flex;
+  margin-top: 24px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 38px;
+}
+.sectionWrapper {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  .sectionHeading {
+    @include commonHeading;
+  }
+  .colorBar {
+    width: 135px;
+    height: 4px;
+    border-radius: 8px;
+    margin-top: 12px;
+  }
+  .addButton {
+    width: 247px;
+    height: 56px;
+    border-radius: 9px;
+    margin-top: 16px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+}
