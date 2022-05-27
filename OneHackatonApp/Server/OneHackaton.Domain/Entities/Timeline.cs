@@ -12,8 +12,5 @@ namespace OneHackaton.Domain.Entities
         public DateTime Date { get; set; }
         public virtual IEnumerable<DeveloperItem> DeveloperItems { get; set; }
         public virtual IEnumerable<UserItem> UserItems { get; set; }
-        public string Credentials { get; set; }
-        public string Email { get; set; }
-        public string Description { get; set; }
     }
 }

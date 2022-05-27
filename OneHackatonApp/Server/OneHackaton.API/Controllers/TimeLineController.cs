@@ -8,24 +8,24 @@ namespace OneHackaton.API.Controllers
     [Route("[controller]")]
     public class TimeLineController : Controller
     {
-        [HttpGet("GetTestItem")]
-        public IEnumerable<ReadTimelineVM> GetTestItem()
-        {
-            return new List<ReadTimelineVM>() { new ReadTimelineVM()
-            {
-                Date=DateTime.Today,
-                DeveloperItems=new List<DeveloperItemDto>() {
-                    new DeveloperItemDto(){Name="bug request" }
-                },
-                UserItems = new List<UserItemDTO>() {
-                    new UserItemDTO(){Name="bug request" }
-                }
-            }};
-        }
-        [HttpPost("AddFeedback")]
-        public int AddFeedback([FromBody]string eredentials, string email,string description)
-        {
+        //[HttpGet("GetTestItem")]
+        //public IEnumerable<ReadTimelineVM> GetTestItem()
+        //{
+        //    return new List<ReadTimelineVM>() { new ReadTimelineVM()
+        //    {
+        //        Date=DateTime.Today,
+        //        DeveloperItems=new List<DeveloperItemDto>() {
+        //            new DeveloperItemDto(){Name="bug request" }
+        //        },
+        //        UserItems = new List<UserItemDTO>() {
+        //            new UserItemDTO(){Name="bug request" }
+        //        }
+        //    }};
+        //}
+        //[HttpPost("AddFeedback")]
+        //public int AddFeedback([FromBody]string eredentials, string email,string description)
+        //{
 
-        }
+        //}
     }
 }
