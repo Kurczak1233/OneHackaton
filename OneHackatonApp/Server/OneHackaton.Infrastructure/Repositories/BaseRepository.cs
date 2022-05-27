@@ -1,5 +1,4 @@
-﻿using AppDatabaseContext;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using OneHackaton.Domain.Contracts;
 using System;
 using System.Collections.Generic;
