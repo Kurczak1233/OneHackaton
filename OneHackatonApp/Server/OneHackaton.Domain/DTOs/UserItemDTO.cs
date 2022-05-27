@@ -8,9 +8,6 @@ namespace OneHackaton.Domain.DTOs
 {
     public class UserItemDTO
     {
-        public string Credentials { get; set; }
-        public string Email { get; set; }
-        public string Description { get; set; }
-        public DateTimeOffset Date { get; set; } = DateTimeOffset.Now;
+        public string Name { get; set; }
     }
 }
