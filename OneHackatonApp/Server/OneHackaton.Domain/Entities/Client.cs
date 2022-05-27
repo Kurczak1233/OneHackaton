@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace OneHackaton.Domain.Entities
 {
-    public class Client
+    public class Client : IEntity
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
     }
 }
