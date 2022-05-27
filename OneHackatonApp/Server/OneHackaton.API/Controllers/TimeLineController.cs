@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using OneHackaton.Domain.DTOs;
+using OneHackaton.Domain.ViewModels;
 
 namespace OneHackaton.API.Controllers
 {
@@ -8,9 +9,9 @@ namespace OneHackaton.API.Controllers
     public class TimeLineController : Controller
     {
         [HttpGet(Name = "GetTestItem")]
-        public IEnumerable<TimelineVM> Get()
+        public IEnumerable<ReadTimelineVM> Get()
         {
-            return new List<TimelineVM>() { new TimelineVM()
+            return new List<ReadTimelineVM>() { new ReadTimelineVM()
             {
                 Date=DateTime.Today,
                 DeveloperItems=new List<DeveloperItemDto>() {
