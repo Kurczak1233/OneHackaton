@@ -2,7 +2,15 @@
   width: calc(50% - 5px);
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
   .item {
     height: 100px;
+    display: flex;
+    .extensionBar {
+      width: 150px;
+      height: 5px;
+      background-color: #E3005F;
+    }
   }
 }

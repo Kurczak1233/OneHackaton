@@ -9,7 +9,7 @@ namespace OneHackaton.Domain.DTOs
     public class TimelineVM
     {
         public DateTime Date { get; set; }
-        public IEnumerable<DeveloperItemDTO> DeveloperItems { get; set; }
+        public IEnumerable<DeveloperItemDto> DeveloperItems { get; set; }
         public IEnumerable<UserItemDTO> UserItems { get; set; }
     }
 }
