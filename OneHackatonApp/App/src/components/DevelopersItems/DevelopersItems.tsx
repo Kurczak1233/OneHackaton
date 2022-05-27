@@ -12,7 +12,7 @@ const DevelopersItems = ({ developersItems }: IDevelopersItems) => {
         <div key={`${item.name} ${index}`} className={styles.item}>
           {item.name}
           <div className={styles.extensionBar} />
-          <div className={styles.}></div>
+          <div className={styles.note}></div>
         </div>
       ))}
     </div>
