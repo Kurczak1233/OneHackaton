@@ -8,8 +8,8 @@ namespace OneHackaton.Domain
 {
     public class Project
     {
-        public virtual int Id { get; set; }
-        public virtual string Name { get; set; }
-        public virtual ICollection<Developer> Developers { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public virtual Team Team { get; set; }
     }
 }
