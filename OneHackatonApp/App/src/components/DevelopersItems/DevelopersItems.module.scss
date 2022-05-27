@@ -1,0 +1,8 @@
+.sidesItems {
+  width: calc(50% - 5px);
+  display: flex;
+  flex-direction: column;
+  .item {
+    height: 100px;
+  }
+}
