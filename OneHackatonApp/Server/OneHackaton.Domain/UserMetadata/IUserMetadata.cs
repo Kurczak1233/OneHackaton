@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace OneHackaton.Domain.UserMetadata
 {
-    internal interface IUserMetadata
+    public interface IUserMetadata
     {
+        public static string NickName => "https://OneHackaton.com/nickname";
+        public static string UserId=> "https://OneHackaton.com/userId";
+        public static string Email=> "https://OneHackaton.com/email";
     }
 }

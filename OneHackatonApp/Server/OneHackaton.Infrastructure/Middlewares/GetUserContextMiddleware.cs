@@ -6,6 +6,7 @@ using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.DependencyInjection;
+using OneHackaton.Infrastructure.Middlewares.Commands;
 
 namespace OneHackaton.Infrastructure.Middlewares;
 

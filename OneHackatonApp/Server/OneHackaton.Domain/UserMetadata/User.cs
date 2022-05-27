@@ -15,6 +15,7 @@ namespace OneHackaton.Domain.UserMetadata
         {
             _httpContextAccessor = httpContextAccessor;
         }
+
         public int Id
         {
             get
@@ -24,8 +25,8 @@ namespace OneHackaton.Domain.UserMetadata
                 int.TryParse(userMetaDataClaim?.Value, out var personId);
                 return personId;
             }
+            set { }
         }
-
         public string Email
         {
             get
@@ -35,17 +36,17 @@ namespace OneHackaton.Domain.UserMetadata
 
                 return userEmail?.Value!;
             }
+            set { }
         }
-
-        public string NickName
-        {
+        public string NickName {
             get
             {
                 var userLastName =
-                    _httpContextAccessor.HttpContext?.User?.Claims?.FirstOrDefault(c => c.Type == IUserMetadata.Nickname);
+                    _httpContextAccessor.HttpContext?.User?.Claims?.FirstOrDefault(c => c.Type == IUserMetadata.NickName);
 
                 return userLastName?.Value!;
             }
+            set { }
         }
     }
 }
