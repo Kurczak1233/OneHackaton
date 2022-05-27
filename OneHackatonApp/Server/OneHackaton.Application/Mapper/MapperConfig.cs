@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using OneHackaton.Domain.DTOs;
 using OneHackaton.Domain.Entities;
 using OneHackaton.Infrastructure.Middlewares.Commands;
 using System;
@@ -14,6 +15,8 @@ namespace OneHackaton.Application.Mapper
         public MapperConfig()
         {
             CreateMap<User, CreateNewUserCommand>().ReverseMap();
+            CreateMap<DeveloperItem, DeveloperItemDto>().ReverseMap();
+            CreateMap<UserItem, UserItemDTO>().ReverseMap();
         }
     }
 }
