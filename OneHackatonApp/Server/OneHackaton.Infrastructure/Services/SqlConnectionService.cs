@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OneHackaton.Domain.Contracts;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace OneHackaton.Infrastructure.Services
 {
-    public class SqlConnectionService
+    public class SqlConnectionService : ISqlConnectionService, IDisposable
     {
         private readonly string _connectionString;
         private SqlConnection? _sqlConnection;

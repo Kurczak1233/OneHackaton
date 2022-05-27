@@ -1,5 +1,7 @@
-﻿using MediatR;
+﻿using AutoMapper;
+using MediatR;
 using OneHackaton.Domain.Contracts;
+using OneHackaton.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,15 +12,20 @@ namespace OneHackaton.Infrastructure.Middlewares.Commands
 {
     public class CreateNewUserCommandHandler : IRequestHandler<CreateNewUserCommand>
     {
-        private readonly ISqlConnectionService _sqlConnectionService;
+        private readonly IUserRepository _userRepository;
+        private readonly IMapper _mapper;
 
-        public CreateNewUserCommandHandler(ISqlConnectionService sqlConnectionService)
+        public CreateNewUserCommandHandler(IMapper mapper,IUserRepository userRepository)
         {
-            _sqlConnectionService = sqlConnectionService;
+            _userRepository = userRepository;
+            _mapper = mapper;
         }
         public async Task<Unit> Handle(CreateNewUserCommand request, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            var user = _mapper.Map<User>(request);
+            await _userRepository.AddAsync(user);
+
+            return Unit.Value;
         }
     }
 }
