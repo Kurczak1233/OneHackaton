@@ -1,21 +1,35 @@
 import MainTimelineLogic from "./MainTimelineLogic";
 import styles from "./MainTimeline.module.scss";
+import { dateDashesFormat } from "../../consts/dateDashesFormat";
+import { format } from "date-fns";
+import DevelopersItems from "../DevelopersItems/DevelopersItems";
+import ClientItems from "../ClientItems/ClientItems";
+
 const MainTimeline = () => {
-  const { mockedData } = MainTimelineLogic();
+  const { mockedData, getBiggerValue } = MainTimelineLogic();
   return (
     <div>
-      <div>27.02.50</div>
-      <div>Dot</div>
+      <div className={styles.dotWrapper}>
+        <div className={styles.todayDate}>
+          {format(new Date(), dateDashesFormat)}
+        </div>
+      </div>
+      <div className={styles.dotWrapper}>
+        <div className={styles.dot} />
+      </div>
       <div>
         {mockedData.map((item) => {
           return (
             <div className={styles.itemWrapper} key={item.date.toString()}>
-              <div>Developers items</div>
+              <ClientItems usersItems={item.usersItems} />
               <div
-                style={{ height: 100 * item.items.length }}
+                style={{
+                  height:
+                    100 * getBiggerValue(item.developersItems, item.usersItems),
+                }}
                 className={styles.middleDayBar}
               />
-              <div>Clients items</div>
+              <DevelopersItems developersItems={item.developersItems} />
             </div>
           );
         })}

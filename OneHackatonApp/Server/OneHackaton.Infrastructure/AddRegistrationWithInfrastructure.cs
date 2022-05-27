@@ -7,8 +7,11 @@ using OneHackaton.Infrastructure.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
+using AutoMapper;
 using System.Threading.Tasks;
+using MediatR;
 
 namespace OneHackaton.Infrastructure
 {
@@ -23,6 +26,9 @@ namespace OneHackaton.Infrastructure
             services.AddTransient<ISqlConnectionService, SqlConnectionService>(_ => new SqlConnectionService(configuration.GetConnectionString("DefaultConnection")));
             //Services registration
             services.AddScoped(typeof(IAsyncRepository<>), typeof(BaseRepository<>));
+
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            services.AddMediatR(Assembly.GetExecutingAssembly());
 
             services.AddScoped<IUserRepository, UserRepository>();
 
