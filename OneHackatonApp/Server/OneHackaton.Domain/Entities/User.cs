@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace OneHackaton.Domain.Entities
 {
-    public class Project
+    public class User
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public virtual Team Team { get; set; }
+        public string Email { get; set; }
+        public string NickName { get; set; }
     }
 }
