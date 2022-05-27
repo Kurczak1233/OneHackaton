@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace OneHackaton.Application.Mapper
 {
-    public class MapperProfile : Profile
+    public class MapperConfig : Profile
     {
-        public MapperProfile()
+        public MapperConfig()
         {
             CreateMap<User, CreateNewUserCommand>().ReverseMap();
         }
