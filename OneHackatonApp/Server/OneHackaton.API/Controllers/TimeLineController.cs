@@ -22,5 +22,10 @@ namespace OneHackaton.API.Controllers
                 }
             }};
         }
+        [HttpPost("AddFeedback")]
+        public int AddFeedback([FromBody]string eredentials, string email,string description)
+        {
+
+        }
     }
 }
