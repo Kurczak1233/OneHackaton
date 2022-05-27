@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OneHackaton.Domain.DTOs
 {
-    public class TimelineVM
+    public record TimelineVM
     {
         public DateTime Date { get; set; }
         public IEnumerable<DeveloperItemDto> DeveloperItems { get; set; }
