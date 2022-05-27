@@ -21,9 +21,14 @@ namespace AppDatabaseContext
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Post>()
-                .HasOne(p => p.Blog)
-                .WithMany(b => b.Posts);
+            modelBuilder.Entity<Developer>()
+                .HasOne(p => p.Team)
+                .WithMany(b => b.Developers);
+
+            modelBuilder.Entity<Project>()
+               .HasOne(p => p.Team)
+               .WithMany(b => b.Projects);
+
         }
     }
 }
