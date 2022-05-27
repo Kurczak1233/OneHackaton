@@ -10,9 +10,8 @@ const DevelopersItems = ({ developersItems }: IDevelopersItems) => {
     <div className={styles.sidesItems}>
       {developersItems.map((item, index) => (
         <div key={`${item.name} ${index}`} className={styles.item}>
-          {item.name}
+          <div className={styles.note}>{item.name}</div>
           <div className={styles.extensionBar} />
-          <div className={styles.note}></div>
         </div>
       ))}
     </div>

@@ -35,6 +35,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 1px solid transparent;
     cursor: pointer;
+  }
+  .addButton:hover {
+    border: 1px solid #00ffc2;
   }
 }

@@ -5,12 +5,29 @@
   justify-content: flex-end;
   align-items: flex-end;
   .item {
-    height: 100px;
+    height: 125px;
     display: flex;
+    align-items: center;
     .extensionBar {
       width: 150px;
       height: 5px;
-      background-color: #E3005F;
+      background-color: #e3005f;
+    }
+    .note {
+      width: 250px;
+      height: 98px;
+      background: #e3005f;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      color: #ffffff;
+      justify-content: center;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+    .note:hover {
+      border: 1px solid #00ffc2;
     }
   }
 }
