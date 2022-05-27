@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
+=======
+    <ProjectReference Include="..\OneHackaton.Domain\OneHackaton.Domain.csproj" />
+>>>>>>> 0cf5e660c5f14b8d764e91ed5fbd22be28076741
     <ProjectReference Include="..\OneHackaton.Infrastructure\OneHackaton.Infrastructure.csproj" />
   </ItemGroup>
 
