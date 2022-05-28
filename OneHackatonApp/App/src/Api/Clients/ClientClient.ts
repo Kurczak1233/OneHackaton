@@ -13,7 +13,7 @@ export interface ICreateClientNoteRequest {
 const createClientNote = async (
   body: ICreateClientNoteRequest
 ): Promise<any> => {
-  return AxiosClient("POST", `${Client}`, base, { body });
+  return AxiosClient("POST", `api/${Client}`, base, { body });
 };
 
 export { createClientNote };

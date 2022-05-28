@@ -11,7 +11,7 @@ export interface ICreateDevNoteRequest {
 }
 
 const createDevNote = async (body: ICreateDevNoteRequest): Promise<any> => {
-  return AxiosClient("POST", `${Dev}`, base, { body });
+  return AxiosClient("POST", `api/${Dev}`, base, { body });
 };
 
 export { createDevNote };
