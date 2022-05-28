@@ -15,7 +15,9 @@ namespace OneHackaton.Domain.DbScheme
     {
         private static readonly string _schema = DbSchemas.Dbo;
         public static string Users { get; } = $"[{_schema}].[{nameof(Users)}]";
-        public static string Posts { get; } = $"[{_schema}].[{nameof(Posts)}]";
+        public static string TimeLines { get; } = $"[{_schema}].[{nameof(TimeLines)}]";
+        public static string UserItems { get; } = $"[{_schema}].[{nameof(UserItems)}]";
+        public static string DeveloperItems { get; } = $"[{_schema}].[{nameof(DeveloperItems)}]";
 
     }
 }

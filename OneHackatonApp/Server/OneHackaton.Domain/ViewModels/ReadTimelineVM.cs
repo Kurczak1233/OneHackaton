@@ -10,6 +10,7 @@ namespace OneHackaton.Domain.ViewModels
     public class ReadTimelineVM
 
     {
+        public int Id { get; set; }
         public DateTime Date { get; set; }
         public IEnumerable<DeveloperItemDto> DeveloperItems { get; set; }
         public IEnumerable<UserItemDTO> UserItems { get; set; }

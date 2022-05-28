@@ -1,3 +1,4 @@
+using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.OpenApi.Models;
 using OneHackaton.Infrastructure;

@@ -13,5 +13,6 @@ namespace OneHackaton.Domain.DTOs
         public string Email { get; set; }
         public string Description { get; set; }
         public DateTimeOffset Date { get; set; } = DateTimeOffset.Now;
+        public int TimeLineId { get; set; }
     }
 }
