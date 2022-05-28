@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace OneHackaton.Application.Functions.TimeLine.Commands.CreateUserItem
 {
-    public class CreateUserItemCommandHandler
+    public class CreateUserItemCommandHandler : IRequestHandler<CreateUserItemCommand>
     {
         private readonly IMapper _mapper;
         private readonly IUserItemRepository _userItemRepository;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MediatR;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,5 +14,12 @@ namespace OneHackaton.Application.Functions.TimeLine.Commands.CreateUserItem
         public string Email { get; set; }
         public string Credentials { get; set; }
         public string Description { get; set; }
+
+        public CreateUserItemCommand(string credentials, string description, string email)
+        {
+            Email = email;
+            Credentials = credentials;  
+            Description = description;  
+        }
     }
 }
