@@ -16,7 +16,7 @@ namespace OneHackaton.API.Controllers
         {
             _mediator = mediator;
         }
-        [HttpGet("GetTestItem")]
+        [HttpGet]
         public async Task<ActionResult<IEnumerable<ReadTimelineVM>>> GetTestItem()
         {
             var result = await _mediator.Send(new GetAllTimeLinesQuery());
