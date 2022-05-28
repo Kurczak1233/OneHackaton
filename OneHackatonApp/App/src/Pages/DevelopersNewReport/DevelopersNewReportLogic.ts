@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   createDevNote,
   ICreateDevNoteRequest,
@@ -9,6 +10,7 @@ const DevelopersNewReportLogic = () => {
   const [email, setEmail] = useState<string>("");
   const [creadentials, setCredentials] = useState<string>("");
   const [date, setDate] = useState<string>("");
+  const navigate = useNavigate();
   const submitData = async () => {
     const request: ICreateDevNoteRequest = {
       credentials: creadentials,
@@ -17,6 +19,7 @@ const DevelopersNewReportLogic = () => {
       date: new Date(date),
     };
     await createDevNote(request);
+    navigate(-2);
   };
   return {
     description,

@@ -29,10 +29,11 @@
     margin-top: 12px;
   }
   .buttonsWrapper {
-    width: 80%;
+    min-width: 80vw;
     height: 200px;
     display: flex;
     align-items: center;
+    justify-content: center;
     .link {
       text-decoration: none;
       background: #e3005f;
@@ -47,10 +48,10 @@
       font-size: 32px;
       line-height: 38px;
       color: #ffffff;
-      margin-right: 33px;
-      margin-left: 33px;
       border: 3px solid transparent;
       cursor: pointer;
+      margin-right: 33px;
+      margin-left: 33px;
       width: 365.79px;
       height: 141px;
     }
@@ -68,9 +69,9 @@
       font-weight: 400;
       font-size: 32px;
       line-height: 38px;
-      color: #ffffff;
       margin-right: 33px;
       margin-left: 33px;
+      color: #ffffff;
       border: 3px solid transparent;
       cursor: pointer;
     }
