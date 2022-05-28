@@ -17,10 +17,11 @@ namespace OneHackaton.Application.Functions.TimeLine.Commands.CreateUserItem
         private readonly IUserItemRepository _userItemRepository;
         private readonly ApplicationDbContext  _context;
 
-        public CreateUserItemCommandHandler(IMapper mapper, IUserItemRepository userItemRepository)
+        public CreateUserItemCommandHandler(IMapper mapper, IUserItemRepository userItemRepository,ApplicationDbContext context)
         {
             _mapper = mapper;
             _userItemRepository = userItemRepository;
+            _context = context;
         }
         public async Task<Unit> Handle(CreateUserItemCommand request, CancellationToken cancellationToken)
         {
