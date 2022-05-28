@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OneHackaton.Domain.UsersAggregate
+namespace OneHackaton.Domain.DTOs
 {
-    public record ApplicationUser
+    public class PostDTO
     {
-        public int Id { get; set; }
+        public string Credentials { get; set; }
+        public string Description { get; set; }
         public string Email { get; set; }
-        public string NickName { get; set; }        
     }
 }

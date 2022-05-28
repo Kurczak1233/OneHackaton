@@ -4,6 +4,7 @@ import MainPage from "./Pages/MainPage/MainPage";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import DevelopersChooseItemPage from "./Pages/DevelopersChooseItemPage/DevelopersChooseItemPage";
 import DevelopersNewReports from "./Pages/DevelopersNewReport/DevelopersNewReport";
+import AppLogic from "./AppLogic";
 
 export interface IPresent {
   value: number;
@@ -13,6 +14,9 @@ export interface IPresent {
 export const PresentContext = React.createContext<IPresent[]>([]);
 
 function App() {
+
+const { checkIfRouteIsAuthenticated } = AppLogic();
+
   return (
     <Router>
       <Routes>

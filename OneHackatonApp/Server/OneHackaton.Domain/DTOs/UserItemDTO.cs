@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace OneHackaton.Domain.DTOs
 {
-    public class UserItemDTO
+    public record UserItemDTO
     {
-        public string Name { get; set; }
+        public int Id { get; set; }
+        public string Credentials { get; set; }
+        public string Email { get; set; }
+        public string Description { get; set; }
+        public DateTimeOffset Date { get; set; } = DateTimeOffset.Now;
     }
 }

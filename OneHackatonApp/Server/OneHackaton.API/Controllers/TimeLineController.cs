@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using OneHackaton.Domain.DTOs;
+using OneHackaton.Domain.ViewModels;
 
 namespace OneHackaton.API.Controllers
 {
@@ -7,19 +8,24 @@ namespace OneHackaton.API.Controllers
     [Route("[controller]")]
     public class TimeLineController : Controller
     {
-        [HttpGet(Name = "GetTestItem")]
-        public IEnumerable<TimelineVM> Get()
-        {
-            return new List<TimelineVM>() { new TimelineVM()
-            {
-                Date=DateTime.Today,
-                DeveloperItems=new List<DeveloperItemDto>() {
-                    new DeveloperItemDto(){Name="bug request" }
-                },
-                UserItems = new List<UserItemDTO>() {
-                    new UserItemDTO(){Name="bug request" }
-                }
-            }};
-        }
+        //[HttpGet("GetTestItem")]
+        //public IEnumerable<ReadTimelineVM> GetTestItem()
+        //{
+        //    return new List<ReadTimelineVM>() { new ReadTimelineVM()
+        //    {
+        //        Date=DateTime.Today,
+        //        DeveloperItems=new List<DeveloperItemDto>() {
+        //            new DeveloperItemDto(){Name="bug request" }
+        //        },
+        //        UserItems = new List<UserItemDTO>() {
+        //            new UserItemDTO(){Name="bug request" }
+        //        }
+        //    }};
+        //}
+        //[HttpPost("AddFeedback")]
+        //public int AddFeedback([FromBody]string eredentials, string email,string description)
+        //{
+
+        //}
     }
 }
