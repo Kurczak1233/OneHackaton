@@ -19,9 +19,9 @@ namespace OneHackaton.API.Controllers
             _mapper = mapper;
         }
         [HttpPost]
-        public async Task<IActionResult> UserPost([FromBody] PostDTO postDTO)
+        public async Task<IActionResult> UserPost([FromBody] CreateUserItemCommand createUserItemCommand)
         {
-            await _mediator.Send(_mapper.Map<CreateUserItemCommand>(postDTO));
+            await _mediator.Send(createUserItemCommand);
             return Ok();
         }
     }
