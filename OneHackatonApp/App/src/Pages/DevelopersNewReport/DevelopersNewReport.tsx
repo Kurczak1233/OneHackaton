@@ -11,6 +11,8 @@ const DevelopersNewReports = () => {
     setEmail,
     creadentials,
     setCredentials,
+    date,
+    setDate,
     submitData,
   } = DevelopersNewReportLogic();
 
@@ -35,7 +37,10 @@ const DevelopersNewReports = () => {
             setCredentialsValue={setCredentials}
             emailValue={email}
             color={"#e3005f"}
-            setEmailValue={setEmail}          />
+            setEmailValue={setEmail}
+            setDate={setDate}
+            date={date}
+          />
           <div className={styles.submitButton} onClick={submitData}>
             Send
           </div>

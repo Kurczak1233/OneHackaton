@@ -28,13 +28,11 @@ namespace OneHackaton.API.Controllers
         }
 
         [HttpPost("CreateRaport")]
-
         public async Task<ActionResult> CreateRaport([FromBody] CreateRaportCommand createRaportCommand)
         {
             await _mediator.Send(createRaportCommand);
 
             return Ok();
         }
-
     }
 }

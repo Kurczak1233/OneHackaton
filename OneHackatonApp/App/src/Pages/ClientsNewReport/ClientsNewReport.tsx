@@ -12,6 +12,8 @@ const ClientsNewReports = () => {
     creadentials,
     setCredentials,
     submitData,
+    date,
+    setDate,
   } = ClientsNewReportLogic();
 
   return (
@@ -36,6 +38,8 @@ const ClientsNewReports = () => {
             emailValue={email}
             color={"#0471a6"}
             setEmailValue={setEmail}
+            setDate={setDate}
+            date={date}
           />
           <div className={styles.submitButton} onClick={submitData}>
             Send

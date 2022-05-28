@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Dapper;
 using MediatR;
 using OneHackaton.Domain.Contracts;
 using OneHackaton.Domain.Entities;
@@ -15,24 +16,26 @@ namespace OneHackaton.Application.Functions.TimeLine.Commands.CreateDevItem
     {
         private readonly IDevRepository _devRepository;
         private readonly IMapper _mapper;
-        private readonly ApplicationDbContext _context;
+        private readonly ISqlConnectionService _connection;
 
-        public CreateDevItemCommandHandler(IMapper mapper,IDevRepository devRepository, ApplicationDbContext context)
+        public CreateDevItemCommandHandler(IMapper mapper,IDevRepository devRepository, ISqlConnectionService connection)
         {
             _devRepository = devRepository;
             _mapper = mapper;
-            _context = context;
+            _connection = connection;
         }
         public async Task<Unit> Handle(CreateDevItemCommand request, CancellationToken cancellationToken)
         {
-            var query = _context.TimeLines.FirstOrDefault(x => x.Date == DateTimeOffset.Now).Id;
-            if (query != null) request.TimeLineId = query;
-            else
-            {
-                Timeline timeline = new() { Date = DateTimeOffset.Now };
-                _context.TimeLines.Add(timeline);
-                query = timeline.Id;
-                _context.SaveChanges();
+            var connection = await _connection.GetAsync();
+            var sql = $@"SELECT * FROM TimeLines";
+
+            var listOfTimeLinesEntities = await connection.QueryAsync<Timeline>(sql);
+            var query = listOfTimeLinesEntities.FirstOrDefault(x => x.Date.DayOfYear == request.Date.DayOfYear);
+            if (query != null) request.TimeLineId = query.Id;
+            else { 
+                var sql2 = $@"INSERT INTO TimeLines (Date) VALUES (@Date)";
+                var item = await connection.ExecuteAsync(sql2, new { Date = request.Date });
+                request.TimeLineId = item;
             }
             var devItem = _mapper.Map<DeveloperItem>(request);
             await _devRepository.AddAsync(devItem);

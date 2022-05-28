@@ -8,10 +8,11 @@ export interface ICreateDevNoteRequest {
   credentials: string;
   description: string;
   email: string;
+  date: Date;
 }
 
 const createDevNote = async (body: ICreateDevNoteRequest): Promise<any> => {
-  return AxiosClient("POST", `${Dev}`, base, { body });
+  return AxiosClient("POST", `api/${Dev}`, base, { body });
 };
 
 export { createDevNote };

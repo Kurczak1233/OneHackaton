@@ -8,11 +8,13 @@ const ClientsNewReportLogic = () => {
   const [description, setDescription] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [creadentials, setCredentials] = useState<string>("");
+  const [date, setDate] = useState<string>("");
   const submitData = async () => {
     const request: ICreateClientNoteRequest = {
       credentials: creadentials,
       description: description,
       email: email,
+      date: new Date(date),
     };
     await createClientNote(request);
   };
@@ -24,6 +26,8 @@ const ClientsNewReportLogic = () => {
     creadentials,
     setCredentials,
     submitData,
+    setDate,
+    date,
   };
 };
 
