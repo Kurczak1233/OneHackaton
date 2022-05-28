@@ -9,7 +9,8 @@ const ClientItems = ({ usersItems }: IClientItems) => {
     <div className={styles.sidesItems}>
       {usersItems.map((item, index) => (
         <div key={`${item.name} ${index}`} className={styles.item}>
-          {item.name}
+          <div className={styles.extensionBar} />
+          <div className={styles.note}>{item.name}</div>
         </div>
       ))}
     </div>
