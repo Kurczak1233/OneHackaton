@@ -23,6 +23,7 @@ namespace OneHackaton.Application.Mapper
             CreateMap<UserItem, UserItemDTO>().ReverseMap();
             CreateMap<Timeline, ReadTimelineVM>().ReverseMap();
             CreateMap<PostDTO, CreateUserItemCommand>().ReverseMap();
+            CreateMap<UserItem, CreateUserItemCommand>().ReverseMap();
         }
     }
 }
