@@ -30,7 +30,7 @@ const ClientsNewReports = () => {
         </div>
         <div className={styles.rightPartOfMainComponent}>
           <UserCreatentials
-            title={"Request a feature"}
+            title={"Send report"}
             credentialsValue={creadentials}
             setCredentialsValue={setCredentials}
             emailValue={email}

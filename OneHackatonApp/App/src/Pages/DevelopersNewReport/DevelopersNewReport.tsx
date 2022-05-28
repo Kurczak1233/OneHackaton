@@ -30,13 +30,12 @@ const DevelopersNewReports = () => {
         </div>
         <div className={styles.rightPartOfMainComponent}>
           <UserCreatentials
-            title={"Request a feature"}
+            title={"Send report"}
             credentialsValue={creadentials}
             setCredentialsValue={setCredentials}
             emailValue={email}
             color={"#e3005f"}
-            setEmailValue={setEmail}
-          />
+            setEmailValue={setEmail}          />
           <div className={styles.submitButton} onClick={submitData}>
             Send
           </div>
