@@ -10,7 +10,7 @@ const ClientsChooseItemPage = () => {
       </div>
       <div className={styles.buttonsWrapper}>
         <Link className={styles.link} to={"/clients-note/new/report"}>
-          <div className={styles.buttonItem}>Send Raport</div>
+          <div>Send Raport</div>
         </Link>
         <div className={styles.buttonItem}>Send Bug Fix</div>
         <div className={styles.buttonItem}>Send App Update</div>
