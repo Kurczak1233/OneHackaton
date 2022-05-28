@@ -10,4 +10,8 @@
     <ProjectReference Include="..\OneHackaton.Infrastructure\OneHackaton.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Functions\TimeLine\Commands\CreateDev\" />
+  </ItemGroup>
+
 </Project>

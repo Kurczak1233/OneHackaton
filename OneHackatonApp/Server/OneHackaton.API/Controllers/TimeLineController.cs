@@ -8,7 +8,7 @@ using OneHackaton.Domain.ViewModels;
 namespace OneHackaton.API.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class TimeLineController : Controller
     {
         private readonly IMediator _mediator;
