@@ -32,10 +32,13 @@ namespace OneHackaton.Application.Functions.TimeLine.Commands.CreateDevItem
             var listOfTimeLinesEntities = await connection.QueryAsync<Timeline>(sql);
             var query = listOfTimeLinesEntities.FirstOrDefault(x => x.Date.DayOfYear == request.Date.DayOfYear);
             if (query != null) request.TimeLineId = query.Id;
-            else { 
+            else {
                 var sql2 = $@"INSERT INTO TimeLines (Date) VALUES (@Date)";
-                var item = await connection.ExecuteAsync(sql2, new { Date = request.Date });
-                request.TimeLineId = item;
+                await connection.ExecuteAsync(sql2, new { Date = request.Date });
+                var sql3 = $@"SELECT * FROM TimeLines WHERE Date = @Date";
+                var foundItem = await connection.QueryAsync<Timeline>(sql3, new { Date = request.Date });
+                var item = foundItem.SingleOrDefault();
+                request.TimeLineId = item.Id;
             }
             var devItem = _mapper.Map<DeveloperItem>(request);
             await _devRepository.AddAsync(devItem);
