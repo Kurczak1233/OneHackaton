@@ -7,6 +7,12 @@ namespace OneHackaton.API.Controllers
     [Route("[controller]")]
     public class ClientController : Controller
     {
+        private readonly IMediator _mediator;
+
+        public TimeLineController(IMediator mediator)
+        {
+            _mediator = mediator;
+        }
         [HttpPost]
         public IActionResult UserPost([FromBody] PostDTO postDTO)
         {
