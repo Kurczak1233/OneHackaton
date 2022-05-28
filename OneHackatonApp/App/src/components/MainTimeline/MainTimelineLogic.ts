@@ -6,7 +6,7 @@ const MainTimelineLogic = () => {
   const [timeline, setTimelime] = useState<TimelineVm[]>();
 
   const handleGetTimeline = async () => {
-    await getTimelineData();
+    setTimelime(await getTimelineData());
   };
 
   useEffect(() => {
