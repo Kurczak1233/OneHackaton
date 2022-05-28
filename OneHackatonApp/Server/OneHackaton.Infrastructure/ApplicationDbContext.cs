@@ -16,6 +16,7 @@ namespace OneHackaton.Infrastructure
         public virtual DbSet<DeveloperItem> DeveloperItems { get; set; }
         public virtual DbSet<UserItem> UserItems { get; set; }
         public virtual DbSet<Timeline> TimeLines { get; set; }
+        public virtual DbSet<Raport> Raports { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             :base(options)
         {
