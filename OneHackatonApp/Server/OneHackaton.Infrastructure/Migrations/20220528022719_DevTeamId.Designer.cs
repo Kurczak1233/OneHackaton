@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OneHackaton.Infrastructure;
 
@@ -11,9 +12,10 @@ using OneHackaton.Infrastructure;
 namespace OneHackaton.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220528022719_DevTeamId")]
+    partial class DevTeamId
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,35 +23,6 @@ namespace OneHackaton.Infrastructure.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
-
-            modelBuilder.Entity("OneHackaton.Domain.Entities.Client", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Client");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 7,
-                            Name = "Cavatina"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Name = "RockSoft"
-                        });
-                });
 
             modelBuilder.Entity("OneHackaton.Domain.Entities.Developer", b =>
                 {
@@ -71,32 +44,6 @@ namespace OneHackaton.Infrastructure.Migrations
                     b.HasIndex("TeamId");
 
                     b.ToTable("Developers");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 3,
-                            Name = "MichalDev",
-                            TeamId = 2
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Name = "JakubDev",
-                            TeamId = 2
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Name = "MikoDev",
-                            TeamId = 2
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Name = "MaksDev",
-                            TeamId = 2
-                        });
                 });
 
             modelBuilder.Entity("OneHackaton.Domain.Entities.DeveloperItem", b =>
@@ -139,30 +86,6 @@ namespace OneHackaton.Infrastructure.Migrations
                     b.HasIndex("TimeLineId");
 
                     b.ToTable("DeveloperItems");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 3,
-                            Credentials = "Dev",
-                            Date = new DateTimeOffset(new DateTime(2022, 5, 28, 4, 29, 6, 830, DateTimeKind.Unspecified).AddTicks(8077), new TimeSpan(0, 2, 0, 0, 0)),
-                            Description = "Whatever it takes",
-                            DeveloperId = 4,
-                            Email = "dev@rocksoft.com",
-                            Name = "DevItem",
-                            TimeLineId = 4
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Credentials = "Dev",
-                            Date = new DateTimeOffset(new DateTime(2022, 5, 30, 4, 29, 6, 830, DateTimeKind.Unspecified).AddTicks(8109), new TimeSpan(0, 2, 0, 0, 0)),
-                            Description = "Whatever it takes",
-                            DeveloperId = 5,
-                            Email = "dev@rocksoft.com",
-                            Name = "DevItem",
-                            TimeLineId = 5
-                        });
                 });
 
             modelBuilder.Entity("OneHackaton.Domain.Entities.Project", b =>
@@ -185,20 +108,6 @@ namespace OneHackaton.Infrastructure.Migrations
                     b.HasIndex("TeamId");
 
                     b.ToTable("Projects");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 6,
-                            Name = "HealthCare Application",
-                            TeamId = 2
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Name = "Media Application",
-                            TeamId = 2
-                        });
                 });
 
             modelBuilder.Entity("OneHackaton.Domain.Entities.Raport", b =>
@@ -248,18 +157,6 @@ namespace OneHackaton.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Teams");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 2,
-                            Name = "Development team"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "QA team"
-                        });
                 });
 
             modelBuilder.Entity("OneHackaton.Domain.Entities.Timeline", b =>
@@ -276,18 +173,6 @@ namespace OneHackaton.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("TimeLines");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 4,
-                            Date = new DateTime(2022, 5, 28, 4, 29, 6, 831, DateTimeKind.Local).AddTicks(682)
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Date = new DateTime(2022, 5, 28, 4, 29, 6, 831, DateTimeKind.Local).AddTicks(692)
-                        });
                 });
 
             modelBuilder.Entity("OneHackaton.Domain.Entities.User", b =>
@@ -309,20 +194,6 @@ namespace OneHackaton.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("User");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 3,
-                            Email = "User@User.com",
-                            NickName = "Userek"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Email = "Marcin@User.com",
-                            NickName = "Marcin"
-                        });
                 });
 
             modelBuilder.Entity("OneHackaton.Domain.Entities.UserItem", b =>
@@ -365,63 +236,6 @@ namespace OneHackaton.Infrastructure.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("UserItems");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 3,
-                            Credentials = "User",
-                            Date = new DateTimeOffset(new DateTime(2022, 5, 28, 4, 29, 6, 831, DateTimeKind.Unspecified).AddTicks(730), new TimeSpan(0, 2, 0, 0, 0)),
-                            Description = "Whatever it takes",
-                            Email = "dev@rocksoft.com",
-                            Name = "Raports",
-                            TimeLineId = 4,
-                            UserId = 3
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Credentials = "User",
-                            Date = new DateTimeOffset(new DateTime(2022, 5, 30, 4, 29, 6, 831, DateTimeKind.Unspecified).AddTicks(768), new TimeSpan(0, 2, 0, 0, 0)),
-                            Description = "Whatever it takes",
-                            Email = "dev@rocksoft.com",
-                            Name = "Raports",
-                            TimeLineId = 4,
-                            UserId = 3
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Credentials = "User",
-                            Date = new DateTimeOffset(new DateTime(2022, 5, 31, 4, 29, 6, 831, DateTimeKind.Unspecified).AddTicks(772), new TimeSpan(0, 2, 0, 0, 0)),
-                            Description = "Whatever it takes",
-                            Email = "dev@rocksoft.com",
-                            Name = "Raports",
-                            TimeLineId = 4,
-                            UserId = 3
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Credentials = "User",
-                            Date = new DateTimeOffset(new DateTime(2022, 6, 2, 4, 29, 6, 831, DateTimeKind.Unspecified).AddTicks(775), new TimeSpan(0, 2, 0, 0, 0)),
-                            Description = "Whatever it takes",
-                            Email = "dev@pitney.com",
-                            Name = "Raports",
-                            TimeLineId = 5,
-                            UserId = 4
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Credentials = "User",
-                            Date = new DateTimeOffset(new DateTime(2022, 6, 3, 4, 29, 6, 831, DateTimeKind.Unspecified).AddTicks(777), new TimeSpan(0, 2, 0, 0, 0)),
-                            Description = "Whatever it takes",
-                            Email = "dev@pitney.com",
-                            Name = "Raports",
-                            TimeLineId = 5,
-                            UserId = 4
-                        });
                 });
 
             modelBuilder.Entity("OneHackaton.Domain.Entities.Developer", b =>
