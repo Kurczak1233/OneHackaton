@@ -12,7 +12,7 @@ namespace OneHackaton.Domain.Entities
         public string Credentials { get; set; }
         public string Email { get; set; }
         public string Description { get; set; }
-        public DateTimeOffset Date { get; set; } = DateTimeOffset.Now;
+        public DateTimeOffset Date { get; set; }
         public int DeveloperId { get; set; }
         public virtual Developer Developer{ get; set; }
         public int TimeLineId { get; set; }
