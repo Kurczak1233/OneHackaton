@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
 using OneHackaton.Domain.DTOs;
 
 namespace OneHackaton.API.Controllers
@@ -9,7 +10,7 @@ namespace OneHackaton.API.Controllers
     {
         private readonly IMediator _mediator;
 
-        public TimeLineController(IMediator mediator)
+        public ClientController(IMediator mediator)
         {
             _mediator = mediator;
         }
