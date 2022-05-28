@@ -7,7 +7,7 @@ using OneHackaton.Domain.DTOs;
 namespace OneHackaton.API.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class ClientController : Controller
     {
         private readonly IMediator _mediator;

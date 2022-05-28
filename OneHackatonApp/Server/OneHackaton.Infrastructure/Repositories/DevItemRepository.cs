@@ -1,4 +1,5 @@
-﻿using OneHackaton.Domain.Entities;
+﻿using OneHackaton.Domain.Contracts;
+using OneHackaton.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
