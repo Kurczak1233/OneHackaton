@@ -9,7 +9,7 @@ namespace OneHackaton.Domain.Entities
     public class Timeline
     {
         public int Id { get; set; }
-        public DateTime Date { get; set; }
+        public DateTimeOffset Date { get; set; }
         public virtual IEnumerable<DeveloperItem> DeveloperItems { get; set; }
         public virtual IEnumerable<UserItem> UserItems { get; set; }
     }
