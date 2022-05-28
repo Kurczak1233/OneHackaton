@@ -25,6 +25,7 @@ namespace OneHackaton.API.Controllers
 
             return Ok(result);
         }
+<<<<<<< HEAD
         [HttpPost]
         public async Task<ActionResult> CreateRaport()
         {
@@ -36,5 +37,7 @@ namespace OneHackaton.API.Controllers
         //{
 
         //}
+=======
+>>>>>>> 48cf279e6562d9df29e4406d110c442f9d28746d
     }
 }
