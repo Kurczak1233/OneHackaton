@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
+using OneHackaton.Application.Functions.TimeLine.Queries.GetAllTimeLines;
 using OneHackaton.Domain.DTOs;
 using OneHackaton.Domain.ViewModels;
 
@@ -8,22 +10,23 @@ namespace OneHackaton.API.Controllers
     [Route("[controller]")]
     public class TimeLineController : Controller
     {
-        //[HttpGet("GetTestItem")]
-        //public IEnumerable<ReadTimelineVM> GetTestItem()
-        //{
-        //    return new List<ReadTimelineVM>() { new ReadTimelineVM()
-        //    {
-        //        Date=DateTime.Today,
-        //        DeveloperItems=new List<DeveloperItemDto>() {
-        //            new DeveloperItemDto(){Name="bug request" }
-        //        },
-        //        UserItems = new List<UserItemDTO>() {
-        //            new UserItemDTO(){Name="bug request" }
-        //        }
-        //    }};
-        //}
+        private readonly IMediator _mediator;
+
+        public TimeLineController(IMediator mediator)
+        {
+            _mediator = mediator;
+        }
+        [HttpGet("GetTestItem")]
+        public async Task<ActionResult<IEnumerable<ReadTimelineVM>>> GetTestItem()
+        {
+            var result = await _mediator.Send(new GetAllTimeLinesQuery());
+            if(result == null)
+                return NoContent();
+
+            return Ok(result);
+        }
         //[HttpPost("AddFeedback")]
-        //public int AddFeedback([FromBody]string eredentials, string email,string description)
+        //public int AddFeedback([FromBody] string eredentials, string email, string description)
         //{
 
         //}

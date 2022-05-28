@@ -27,8 +27,12 @@ namespace OneHackaton.Infrastructure
             //Services registration
             services.AddScoped(typeof(IAsyncRepository<>), typeof(BaseRepository<>));
 
+            
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
-            services.AddMediatR(Assembly.GetExecutingAssembly());
+            services.AddMediatR(AppDomain.CurrentDomain.Load("OneHackaton.API"));
+            services.AddMediatR(AppDomain.CurrentDomain.Load("OneHackaton.Application"));
+            services.AddMediatR(AppDomain.CurrentDomain.Load("OneHackaton.Domain"));
+            services.AddMediatR(AppDomain.CurrentDomain.Load("OneHackaton.Infrastructure"));
 
             services.AddScoped<IUserRepository, UserRepository>();
 
