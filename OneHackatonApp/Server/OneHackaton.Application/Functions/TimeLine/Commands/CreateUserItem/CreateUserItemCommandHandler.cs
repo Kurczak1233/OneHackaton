@@ -22,6 +22,11 @@ namespace OneHackaton.Application.Functions.TimeLine.Commands.CreateUserItem
         }
         public async Task<Unit> Handle(CreateUserItemCommand request, CancellationToken cancellationToken)
         {
+            //TODO
+            //Potrzebuję sprawdź po dacie czy istnieje taki timeLine
+            //Jeśli tak weź jego id i przypisz do requesta
+            //Jeśli nie stwórz nowy request i weź jego id do requesta.
+            
             var raport = _mapper.Map<UserItem>(request);
             await _userItemRepository.AddAsync(raport);
 

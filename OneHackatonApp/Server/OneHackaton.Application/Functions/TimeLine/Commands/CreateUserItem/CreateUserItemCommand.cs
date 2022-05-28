@@ -14,9 +14,8 @@ namespace OneHackaton.Application.Functions.TimeLine.Commands.CreateUserItem
         public string Email { get; set; }
         public string Credentials { get; set; }
         public string Description { get; set; }
-        public int UserId { get; set; } = 1;
-        public int TimeLineId { get; set; } = 1;
-        public int Id { get; set; } = 1;
+        public int UserId { get; set; } = 3;
+        public int TimeLineId { get; set; } = 4;
         public CreateUserItemCommand(string credentials, string description, string email)
         {
             Email = email;

@@ -55,8 +55,8 @@ namespace OneHackaton.Application.Functions.TimeLine.Queries.GetAllTimeLines
 
             foreach (var timeline in foundTimeLine)
             {
-                var developerItem = foundDeveloperItems?.Where(x => x.Id == timeline.Id);
-                var userItem = foundUserItems?.Where(x => x.Id == timeline.Id);
+                var developerItem = foundDeveloperItems?.Where(x => x.TimeLineId == timeline.Id);
+                var userItem = foundUserItems?.Where(x => x.TimeLineId == timeline.Id);
 
                 listOfViewModel.Add(new ReadTimelineVM
                 {

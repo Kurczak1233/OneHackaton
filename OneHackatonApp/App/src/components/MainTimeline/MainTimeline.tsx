@@ -1,12 +1,13 @@
 import MainTimelineLogic from "./MainTimelineLogic";
 import styles from "./MainTimeline.module.scss";
 import { dateDashesFormat } from "../../consts/dateDashesFormat";
-import { compareAsc, compareDesc, format, isAfter } from "date-fns";
+import { compareDesc, format } from "date-fns";
 import DevelopersItems from "../DevelopersItems/DevelopersItems";
 import ClientItems from "../ClientItems/ClientItems";
 
 const MainTimeline = () => {
   const { timeline, getBiggerValue } = MainTimelineLogic();
+  console.log(timeline);
   if (!timeline) {
     return <div />;
   }
