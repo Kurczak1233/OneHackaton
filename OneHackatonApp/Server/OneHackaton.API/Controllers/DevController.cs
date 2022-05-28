@@ -14,7 +14,7 @@ namespace OneHackaton.API.Controllers
         {
             _mediator = mediator;
         }
-            [HttpPost]
+        [HttpPost]
         public IActionResult DevPost([FromBody] PostDTO postDTO)
         {
             return Ok();
