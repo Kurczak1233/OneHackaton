@@ -14,6 +14,7 @@ const DevelopersNewReportLogic = () => {
       credentials: creadentials,
       description: description,
       email: email,
+      date: new Date(date),
     };
     await createDevNote(request);
   };

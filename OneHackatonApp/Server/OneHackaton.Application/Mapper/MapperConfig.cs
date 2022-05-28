@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using OneHackaton.Application.Functions.TimeLine.Commands.CreateDevItem;
 using OneHackaton.Application.Functions.TimeLine.Commands.CreateRaport;
 using OneHackaton.Application.Functions.TimeLine.Commands.CreateUserItem;
 using OneHackaton.Domain.DTOs;
@@ -20,7 +21,7 @@ namespace OneHackaton.Application.Mapper
             CreateMap<User, CreateNewUserCommand>().ReverseMap();
             CreateMap<Raport, CreateRaportCommand>().ReverseMap();
             CreateMap<UserItem, CreateUserItemCommand>().ReverseMap();
-            CreateMap<DeveloperItem, DeveloperItemDto>().ReverseMap();
+            CreateMap<DeveloperItem, CreateDevItemCommand>().ReverseMap();
             CreateMap<UserItem, UserItemDTO>().ReverseMap();
             CreateMap<Timeline, ReadTimelineVM>().ReverseMap();
             CreateMap<PostDTO, CreateUserItemCommand>().ReverseMap();

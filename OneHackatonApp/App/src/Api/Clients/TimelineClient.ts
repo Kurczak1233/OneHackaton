@@ -5,7 +5,7 @@ const base = application.baseUrl;
 const TimeLine = "TimeLine";
 
 const getTimelineData = async (): Promise<any> => {
-  return AxiosClient("GET", `${TimeLine}`, base);
+  return AxiosClient("GET", `api/${TimeLine}`, base);
 };
 
 export { getTimelineData };

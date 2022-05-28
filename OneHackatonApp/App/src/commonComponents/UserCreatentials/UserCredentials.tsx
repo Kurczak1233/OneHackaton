@@ -8,6 +8,8 @@ interface IUserCreatentials {
   setCredentialsValue: React.Dispatch<React.SetStateAction<string>>;
   emailValue: string;
   setEmailValue: React.Dispatch<React.SetStateAction<string>>;
+  setDate: React.Dispatch<React.SetStateAction<string>>;
+  date: string;
 }
 
 const UserCreatentials = ({
@@ -17,6 +19,8 @@ const UserCreatentials = ({
   setCredentialsValue,
   emailValue,
   setEmailValue,
+  setDate,
+  date,
 }: IUserCreatentials) => {
   return (
     <div className={styles.wrapper}>
@@ -29,6 +33,7 @@ const UserCreatentials = ({
         value={credentialsValue}
       />
       <Input label={"Email"} setValue={setEmailValue} value={emailValue} />
+      <Input label={"Date"} setValue={setDate} value={date} />
     </div>
   );
 };
