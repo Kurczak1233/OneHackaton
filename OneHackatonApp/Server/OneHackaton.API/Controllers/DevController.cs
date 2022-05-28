@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using OneHackaton.Application.Functions.TimeLine.Commands.CreateDevItem;
 using OneHackaton.Domain.DTOs;
 
 namespace OneHackaton.API.Controllers
@@ -15,8 +16,10 @@ namespace OneHackaton.API.Controllers
             _mediator = mediator;
         }
         [HttpPost]
-        public IActionResult DevPost([FromBody] PostDTO postDTO)
+        public async Task<ActionResult> DevPost([FromBody] PostDTO postDTO)
         {
+            await _mediator.Send(new CreateDevItemCommand(postDTO.Credentials, postDTO.Description, postDTO.Email));
+
             return Ok();
         }
     }
