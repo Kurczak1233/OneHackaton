@@ -35,6 +35,24 @@
     align-items: center;
     .link {
       text-decoration: none;
+      background: #e3005f;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 32px;
+      line-height: 38px;
+      color: #ffffff;
+      margin-right: 33px;
+      margin-left: 33px;
+      border: 3px solid transparent;
+      cursor: pointer;
+      width: 365.79px;
+      height: 141px;
     }
     .buttonItem {
       width: 365.79px;
@@ -57,6 +75,9 @@
       cursor: pointer;
     }
     .buttonItem:hover {
+      border: 3px solid #00ffc2;
+    }
+    .link:hover {
       border: 3px solid #00ffc2;
     }
   }
