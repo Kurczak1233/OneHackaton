@@ -25,19 +25,16 @@ namespace OneHackaton.API.Controllers
 
             return Ok(result);
         }
-<<<<<<< HEAD
-        [HttpPost]
-        public async Task<ActionResult> CreateRaport()
-        {
+        //[HttpPost]
+        //public async Task<ActionResult> CreateRaport()
+        //{
 
-        }
+        //}
 
         //[HttpPost("AddFeedback")]
         //public int AddFeedback([FromBody] string eredentials, string email, string description)
         //{
 
         //}
-=======
->>>>>>> 48cf279e6562d9df29e4406d110c442f9d28746d
     }
 }
