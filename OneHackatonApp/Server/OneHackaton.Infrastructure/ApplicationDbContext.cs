@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using OneHackaton.Domain.Entities;
+using OneHackaton.Infrastructure.DummyData;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +33,39 @@ namespace OneHackaton.Infrastructure
                .HasOne(p => p.Team)
                .WithMany(b => b.Projects);
 
+
+            modelBuilder.Entity<DeveloperItem>(d =>
+            {
+                d.HasData(DummyDeveloperItems.GetDeveloperItems());
+            });
+            modelBuilder.Entity<Developer>(d =>
+            {
+                d.HasData(DummyDevelopers.GetDevelopers());
+            });
+            modelBuilder.Entity<Client>(d =>
+            {
+                d.HasData(DummyClient.GetClients());
+            });
+            modelBuilder.Entity<Project>(d =>
+            {
+                d.HasData(DummyProjects.GetProjects());
+            });
+            modelBuilder.Entity<Team>(d =>
+            {
+                d.HasData(DumyTeams.GetTeams());
+            });
+            modelBuilder.Entity<Timeline>(d =>
+            {
+                d.HasData(DummyTimeLines.GetTimeLines());
+            });
+            modelBuilder.Entity<User>(d =>
+            {
+                d.HasData(DummyUser.GetUsers());
+            });
+            modelBuilder.Entity<UserItem>(d =>
+            {
+                d.HasData(DummyUserItems.GetUserItems());
+            });
         }
     }
 }
