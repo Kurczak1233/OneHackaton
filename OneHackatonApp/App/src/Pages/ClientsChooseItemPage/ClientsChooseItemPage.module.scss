@@ -1,0 +1,63 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  .heading {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 200px;
+  }
+  .title {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 38px;
+    color: #0471a6;
+  }
+  .titleUnderlineBar {
+    width: 135px;
+    height: 4px;
+    background-color: #0471a6;
+    border-radius: 8px;
+    margin-top: 12px;
+  }
+  .buttonsWrapper {
+    width: 80%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    .link {
+      text-decoration: none;
+    }
+    .buttonItem {
+      width: 365.79px;
+      height: 141px;
+      background: #0471a6;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 32px;
+      line-height: 38px;
+      color: #ffffff;
+      margin-right: 33px;
+      margin-left: 33px;
+      border: 3px solid transparent;
+      cursor: pointer;
+    }
+    .buttonItem:hover {
+      border: 3px solid #00ffc2;
+    }
+  }
+}

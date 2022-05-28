@@ -1,0 +1,40 @@
+.textareaWrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  .label {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.1px;
+    margin-bottom: 16px;
+    color: #141414;
+  }
+  .textarea {
+    height: 500px;
+    border: 1px solid #0471a6;
+    border-radius: 6px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    resize: none;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.01em;
+    outline: none;
+    color: #141414;
+    padding: 16px;
+    flex: 1;
+  }
+  .textarea::placeholder {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.01em;
+    color: #141414;
+  }
+}

@@ -13,7 +13,7 @@
     top: 3px;
   }
   .todayDate {
-    color: red;
+    color: #0471a6;
   }
 }
 .itemWrapper {
@@ -25,5 +25,31 @@
     width: 10px;
     background-color: #00ffc2;
   }
-
+}
+.daySeparationBarWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .daySeparationBar {
+    width: 150px;
+    border-radius: 20px;
+    height: 30px;
+    background-color: #00ffc2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .dayDate {
+      z-index: 2;
+      display: block;
+      font-size: 20px;
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 400;
+      min-width: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #0471a6;
+    }
+  }
 }
