@@ -37,6 +37,7 @@ namespace OneHackaton.Infrastructure
             services.AddScoped(typeof(IAsyncRepository<>), typeof(BaseRepository<>));
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IRaportRepository, RaportRepository>();
+            services.AddScoped<IUserItemRepository, UserItemRepository>();
 
             return services;
         }

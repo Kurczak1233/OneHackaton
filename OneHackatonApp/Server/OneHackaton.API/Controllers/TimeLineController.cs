@@ -17,7 +17,7 @@ namespace OneHackaton.API.Controllers
         {
             _mediator = mediator;
         }
-        [HttpGet("GetTestItem")]
+        [HttpGet]
         public async Task<ActionResult<IEnumerable<ReadTimelineVM>>> GetTestItem()
         {
             var result = await _mediator.Send(new GetAllTimeLinesQuery());
@@ -26,12 +26,30 @@ namespace OneHackaton.API.Controllers
 
             return Ok(result);
         }
+<<<<<<< HEAD
+=======
+        [HttpPost("CreateRaport")]
+>>>>>>> 9aaf23a9d3ce231997e62f3c5d3a5bb4e47ed350
         public async Task<ActionResult> CreateRaport([FromBody] CreateRaportCommand createRaportCommand)
         {
             await _mediator.Send(createRaportCommand);
 
             return Ok();
         }
+<<<<<<< HEAD
 
+=======
+        //[HttpPost]
+        //public async Task<ActionResult> CreateRaport()
+        //{
+
+        //}
+
+        //[HttpPost("AddFeedback")]
+        //public int AddFeedback([FromBody] string eredentials, string email, string description)
+        //{
+
+        //}
+>>>>>>> 9aaf23a9d3ce231997e62f3c5d3a5bb4e47ed350
     }
 }

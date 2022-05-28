@@ -6,7 +6,10 @@ import DevelopersItems from "../DevelopersItems/DevelopersItems";
 import ClientItems from "../ClientItems/ClientItems";
 
 const MainTimeline = () => {
-  const { mockedData, getBiggerValue } = MainTimelineLogic();
+  const { timeline, getBiggerValue } = MainTimelineLogic();
+  if (!timeline) {
+    return <div />;
+  }
   return (
     <div>
       <div className={styles.dotWrapper}>
@@ -18,20 +21,19 @@ const MainTimeline = () => {
         <div className={styles.dot} />
       </div>
       <div>
-        {mockedData.map((item) => {
+        {timeline.map((item) => {
           return (
             <div key={item.date.toString()}>
               <div className={styles.itemWrapper}>
-                <DevelopersItems developersItems={item.developersItems} />
+                <DevelopersItems developersItems={item.developerItems} />
                 <div
                   style={{
                     height:
-                      125 *
-                      getBiggerValue(item.developersItems, item.usersItems),
+                      125 * getBiggerValue(item.developerItems, item.userItems),
                   }}
                   className={styles.middleDayBar}
                 />
-                <ClientItems usersItems={item.usersItems} />
+                <ClientItems usersItems={item.userItems} />
               </div>
               <div className={styles.daySeparationBarWrapper}>
                 <div className={styles.daySeparationBar}>
