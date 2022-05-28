@@ -8,12 +8,11 @@ using System.Threading.Tasks;
 namespace OneHackaton.Application.Functions.TimeLine.Commands.CreateRaport
 {
     public class CreateRaportCommand : IRequest
-    {
-        public int Id { get; set; }
+    {        
         public DateTime Created { get; set; } = DateTime.Now;
-        public string Name { get; set; }
+        public string Name { get; set; } = "Raport";
         public string Email { get; set; }
         public string Credentials { get; set; }
-        public string Descritpion { get; set; }
+        public string Description { get; set; }
     }
 }

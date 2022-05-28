@@ -25,16 +25,18 @@ namespace OneHackaton.Infrastructure
             //DapperRegistration
             services.AddTransient<ISqlConnectionService, SqlConnectionService>(_ => new SqlConnectionService(configuration.GetConnectionString("DefaultConnection")));
             //Services registration
-            services.AddScoped(typeof(IAsyncRepository<>), typeof(BaseRepository<>));
-
+                       
             
-            services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            services.AddAutoMapper(AppDomain.CurrentDomain.Load("OneHackaton.Application"));
+
             services.AddMediatR(AppDomain.CurrentDomain.Load("OneHackaton.API"));
             services.AddMediatR(AppDomain.CurrentDomain.Load("OneHackaton.Application"));
             services.AddMediatR(AppDomain.CurrentDomain.Load("OneHackaton.Domain"));
             services.AddMediatR(AppDomain.CurrentDomain.Load("OneHackaton.Infrastructure"));
 
+            services.AddScoped(typeof(IAsyncRepository<>), typeof(BaseRepository<>));
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IRaportRepository, RaportRepository>();
 
             return services;
         }

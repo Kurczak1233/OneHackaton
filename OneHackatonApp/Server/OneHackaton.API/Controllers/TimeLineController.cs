@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using OneHackaton.Application.Functions.TimeLine.Commands.CreateRaport;
 using OneHackaton.Application.Functions.TimeLine.Queries.GetAllTimeLines;
 using OneHackaton.Domain.DTOs;
 using OneHackaton.Domain.ViewModels;
@@ -25,11 +26,12 @@ namespace OneHackaton.API.Controllers
 
             return Ok(result);
         }
-<<<<<<< HEAD
-        [HttpPost]
-        public async Task<ActionResult> CreateRaport()
+        [HttpPost("CreateRaport")]
+        public async Task<ActionResult> CreateRaport([FromBody] CreateRaportCommand createRaportCommand)
         {
+            await _mediator.Send(createRaportCommand);
 
+            return Ok();
         }
 
         //[HttpPost("AddFeedback")]
@@ -37,7 +39,6 @@ namespace OneHackaton.API.Controllers
         //{
 
         //}
-=======
->>>>>>> 48cf279e6562d9df29e4406d110c442f9d28746d
+
     }
 }
