@@ -8,9 +8,9 @@ namespace OneHackaton.API.Controllers
     public class DevController : Controller
     {
         [HttpPost]
-        public void DevPost([FromBody] PostDTO postDTO)
+        public IActionResult DevPost([FromBody] PostDTO postDTO)
         {
-
+            return Ok();
         }
     }
 }
