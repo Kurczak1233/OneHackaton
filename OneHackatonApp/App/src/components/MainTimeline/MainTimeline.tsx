@@ -7,7 +7,6 @@ import ClientItems from "../ClientItems/ClientItems";
 
 const MainTimeline = () => {
   const { timeline, getBiggerValue } = MainTimelineLogic();
-  console.log(timeline);
   if (!timeline) {
     return <div />;
   }
