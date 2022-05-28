@@ -26,6 +26,7 @@ namespace OneHackaton.API.Controllers
 
             return Ok(result);
         }
+<<<<<<< HEAD
         [HttpPost("CreateRaport")]
         public async Task<ActionResult> CreateRaport([FromBody] CreateRaportCommand createRaportCommand)
         {
@@ -33,12 +34,22 @@ namespace OneHackaton.API.Controllers
 
             return Ok();
         }
+=======
+        //[HttpPost]
+        //public async Task<ActionResult> CreateRaport()
+        //{
+
+        //}
+>>>>>>> b27a57b87cae0018a18eb55ede93fc2dd2683e39
 
         //[HttpPost("AddFeedback")]
         //public int AddFeedback([FromBody] string eredentials, string email, string description)
         //{
 
         //}
+<<<<<<< HEAD
 
+=======
+>>>>>>> b27a57b87cae0018a18eb55ede93fc2dd2683e39
     }
 }

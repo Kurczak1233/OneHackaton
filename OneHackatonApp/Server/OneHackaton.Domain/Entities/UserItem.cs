@@ -9,6 +9,7 @@ namespace OneHackaton.Domain.Entities
     public class UserItem
     {
         public int Id { get; set; }
+        public string Name { get; set; }
         public string Credentials { get; set; }
         public string Email { get; set; }
         public string Description { get; set; }
