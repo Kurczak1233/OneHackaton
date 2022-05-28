@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
 using OneHackaton.Domain.DTOs;
 
 namespace OneHackaton.API.Controllers
@@ -7,7 +8,13 @@ namespace OneHackaton.API.Controllers
     [Route("[controller]")]
     public class DevController : Controller
     {
-        [HttpPost]
+        private readonly IMediator _mediator;
+
+        public DevController(IMediator mediator)
+        {
+            _mediator = mediator;
+        }
+            [HttpPost]
         public IActionResult DevPost([FromBody] PostDTO postDTO)
         {
             return Ok();
