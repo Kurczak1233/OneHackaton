@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./DevelopersChooseItemPage.module.scss";
 
 const DevelopersChooseItemPage = () => {
@@ -8,7 +9,9 @@ const DevelopersChooseItemPage = () => {
         <div className={styles.titleUnderlineBar} />
       </div>
       <div className={styles.buttonsWrapper}>
-        <div className={styles.buttonItem}>Send Raport</div>
+        <Link className={styles.link} to={"/developers-note/new/report"}>
+          <div className={styles.buttonItem}>Send Raport</div>
+        </Link>
         <div className={styles.buttonItem}>Send Bug Fix</div>
         <div className={styles.buttonItem}>Send App Update</div>
         <div></div>

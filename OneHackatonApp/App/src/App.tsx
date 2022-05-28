@@ -3,6 +3,7 @@ import "./App.css";
 import MainPage from "./Pages/MainPage/MainPage";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import DevelopersChooseItemPage from "./Pages/DevelopersChooseItemPage/DevelopersChooseItemPage";
+import DevelopersNewReports from "./Pages/DevelopersNewReport/DevelopersNewReport";
 
 export interface IPresent {
   value: number;
@@ -19,6 +20,10 @@ function App() {
         <Route
           path="/developers-note/new"
           element={<DevelopersChooseItemPage />}
+        />
+        <Route
+          path="/developers-note/new/report"
+          element={<DevelopersNewReports />}
         />
       </Routes>
     </Router>

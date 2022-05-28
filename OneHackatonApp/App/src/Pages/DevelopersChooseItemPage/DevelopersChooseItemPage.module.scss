@@ -33,6 +33,9 @@
     height: 200px;
     display: flex;
     align-items: center;
+    .link {
+      text-decoration: none;
+    }
     .buttonItem {
       width: 365.79px;
       height: 141px;
