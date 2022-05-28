@@ -3,6 +3,7 @@ import styles from "./UserCredentials.module.scss";
 
 interface IUserCreatentials {
   title: string;
+  color: string;
   credentialsValue: string;
   setCredentialsValue: React.Dispatch<React.SetStateAction<string>>;
   emailValue: string;
@@ -11,6 +12,7 @@ interface IUserCreatentials {
 
 const UserCreatentials = ({
   title,
+  color,
   credentialsValue,
   setCredentialsValue,
   emailValue,
@@ -18,7 +20,9 @@ const UserCreatentials = ({
 }: IUserCreatentials) => {
   return (
     <div className={styles.wrapper}>
-      <div className={styles.title}>{title}</div>
+      <div className={styles.title} style={{ color: color }}>
+        {title}
+      </div>
       <Input
         label={"Credentials"}
         setValue={setCredentialsValue}

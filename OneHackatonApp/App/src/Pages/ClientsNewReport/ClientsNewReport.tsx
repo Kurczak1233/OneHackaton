@@ -1,9 +1,9 @@
 import Textarea from "../../commonComponents/textarea/Textarea";
 import UserCreatentials from "../../commonComponents/UserCreatentials/UserCredentials";
-import styles from "./DevelopersNewReport.module.scss";
-import DevelopersNewReportLogic from "./DevelopersNewReportLogic";
+import ClientsNewReportLogic from "./ClientsNewReportLogic";
+import styles from "./ClientsNewReport.module.scss";
 
-const DevelopersNewReports = () => {
+const ClientsNewReports = () => {
   const {
     description,
     setDescription,
@@ -12,12 +12,12 @@ const DevelopersNewReports = () => {
     creadentials,
     setCredentials,
     submitData,
-  } = DevelopersNewReportLogic();
+  } = ClientsNewReportLogic();
 
   return (
     <div className={styles.wrapper}>
       <div className={styles.upperPart}>
-        <div className={styles.textWrapper}>Developers</div>
+        <div className={styles.textWrapper}>Clients/Testers</div>
       </div>
       <div className={styles.mainComponent}>
         <div className={styles.leftPartOfMainComponent}>
@@ -34,7 +34,7 @@ const DevelopersNewReports = () => {
             credentialsValue={creadentials}
             setCredentialsValue={setCredentials}
             emailValue={email}
-            color={"#e3005f"}
+            color={"#0471a6"}
             setEmailValue={setEmail}
           />
           <div className={styles.submitButton} onClick={submitData}>
@@ -46,4 +46,4 @@ const DevelopersNewReports = () => {
   );
 };
 
-export default DevelopersNewReports;
+export default ClientsNewReports;
