@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Dapper;
 using MediatR;
 using OneHackaton.Domain.Contracts;
 using OneHackaton.Domain.Entities;
@@ -15,25 +16,27 @@ namespace OneHackaton.Application.Functions.TimeLine.Commands.CreateUserItem
     {
         private readonly IMapper _mapper;
         private readonly IUserItemRepository _userItemRepository;
-        private readonly ApplicationDbContext  _context;
+        private readonly ISqlConnectionService _connection;
 
-        public CreateUserItemCommandHandler(IMapper mapper, IUserItemRepository userItemRepository,ApplicationDbContext context)
+        public CreateUserItemCommandHandler(IMapper mapper, IUserItemRepository userItemRepository, ISqlConnectionService connection)
         {
             _mapper = mapper;
             _userItemRepository = userItemRepository;
-            _context = context;
+            _connection = connection;
         }
         public async Task<Unit> Handle(CreateUserItemCommand request, CancellationToken cancellationToken)
         {
-            //Wszystkie timeliny, datimeoffset rówy datemeNow jeżeli tak to przypisz
-            var query = _context.TimeLines.FirstOrDefault(x => x.Date == DateTimeOffset.Now).Id;
-            if (query != null) request.TimeLineId = query;
+            var connection = await _connection.GetAsync();
+            var sql = $@"SELECT * FROM TimeLines";
+
+            var listOfTimeLinesEntities = await connection.QueryAsync<Timeline>(sql);
+            var query = listOfTimeLinesEntities.FirstOrDefault(x => x.Date.DayOfYear == request.Date.DayOfYear);
+            if (query != null) request.TimeLineId = query.Id;
             else
             {
-                Timeline timeline = new() { Date = DateTimeOffset.Now };
-                _context.TimeLines.Add(timeline);
-                query = timeline.Id;
-                _context.SaveChanges();
+                var sql2 = $@"INSERT INTO TimeLines (Date) VALUES (@Date)";
+                var item = await connection.ExecuteAsync(sql2, new { Date = request.Date });
+                request.TimeLineId = item;
             }
             var raport = _mapper.Map<UserItem>(request);
             await _userItemRepository.AddAsync(raport);

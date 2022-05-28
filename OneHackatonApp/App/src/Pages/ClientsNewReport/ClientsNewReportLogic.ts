@@ -14,6 +14,7 @@ const ClientsNewReportLogic = () => {
       credentials: creadentials,
       description: description,
       email: email,
+      date: new Date(date),
     };
     await createClientNote(request);
   };

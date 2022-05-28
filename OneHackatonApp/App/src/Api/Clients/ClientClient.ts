@@ -8,6 +8,7 @@ export interface ICreateClientNoteRequest {
   credentials: string;
   description: string;
   email: string;
+  date: Date;
 }
 
 const createClientNote = async (
